@@ -2,31 +2,33 @@
 #include "DoubleLinkedlist.h"
 #include "Singlelinkedlist.h"
 
-void exampleSingleList() {
+void exampleSingleList()
+{
+
     try {
         SingleLinkedList<int> list;
-        list.AddToBack(5);
-        list.AddToBack(10);
-        list.AddToBack(20);
-        list.AddToBack(12);
+        list.AddToBack(7);
+        list.AddToBack(16);
+        list.AddToBack(22);
         list.AddToBack(13);
-        list.AddToBack(14);
+        list.AddToBack(24);
+        list.AddToBack(1);
 
-        cout << "added six elements to the emd of list" << endl;
+        cout << "Added six elements to the end of list" << endl;
         cout << endl << list << endl;
 
-        list.AddToBeginning(7);
+        list.AddToBeginning(16);
 
-        cout << "added an element to the beginning" << endl;
+        cout << "Added an element to the beginning" << endl;
         cout << endl << list << endl;
 
 
-        list.AddAtIndex(4, 123);
+        list.AddAtIndex(2, 12);
 
-        cout << "added an element by index 4" << endl;
+        cout << "Added an element by index 2" << endl;
         cout << list << endl;
 
-        cout << "Search 123 in list: " << list.Search(123) << endl << endl;
+        cout << "Search 12 in list: " << list.Search(12) << endl << endl;
 
         cout << "Size of list: " << list.getSize() << endl << endl;
 
@@ -34,17 +36,17 @@ void exampleSingleList() {
 
         list.DeleteFromBeginning();
 
-        cout << "deleted an object from the beginning" << endl;
+        cout << "Deleted an object from the beginning" << endl;
         cout << list << endl;
 
         list.DeleteFromEnd();
 
-        cout << "deleted an object from the end" << endl;
+        cout << "Deleted an object from the end" << endl;
         cout << list << endl;
 
         list.DeleteAtIndex(4);
 
-        cout << "deleted an obj by index 4" << endl;
+        cout << "deleted an object by index 4" << endl;
         cout << list << endl;
 
         cout << "used operator[] with index 2" << endl;
@@ -53,36 +55,38 @@ void exampleSingleList() {
         cout << "used operator[] with index 100" << endl;
         cout << list[100] << endl;
     }
-    catch (const out_of_range& e) {
+    catch (const out_of_range& e)
+    {
         cerr << e.what() << endl;
     }
-
 }
-void exampleDoubleList() {
+
+void exampleDoubleList()
+{
     try {
         DoubleLinkedList<int> list;
-        list.AddToBack(5);
-        list.AddToBack(10);
-        list.AddToBack(20);
+        list.AddToBack(2);
         list.AddToBack(12);
-        list.AddToBack(13);
-        list.AddToBack(14);
+        list.AddToBack(21);
+        list.AddToBack(15);
+        list.AddToBack(19);
+        list.AddToBack(3);
 
-        cout << "added six elements to the emd of list" << endl;
+        cout << "Added six elements to the emd of list" << endl;
         cout << endl << list << endl;
 
-        list.AddToBeginning(7);
+        list.AddToBeginning(12);
 
         cout << "added an element to the beginning" << endl;
         cout << endl << list << endl;
 
 
-        list.AddAtIndex(4, 123);
+        list.AddAtIndex(5, 11);
 
-        cout << "added an element by index 4" << endl;
+        cout << "added an element by index 5" << endl;
         cout << list << endl;
 
-        cout << "Search 123 in list: " << list.Search(123) << endl << endl;
+        cout << "Search 123 in list: " << list.Search(11) << endl << endl;
 
         cout << "Size of list: " << list.getSize() << endl << endl;
 
@@ -90,32 +94,34 @@ void exampleDoubleList() {
 
         list.DeleteFromBeginning();
 
-        cout << "deleted an object from the beginning" << endl;
+        cout << "Deleted an object from the beginning" << endl;
         cout << list << endl;
 
         list.DeleteFromEnd();
 
-        cout << "deleted an object from the end" << endl;
+        cout << "Deleted an object from the end" << endl;
         cout << list << endl;
 
-        list.DeleteAtIndex(4);
+        list.DeleteAtIndex(2);
 
-        cout << "deleted an obj by index 4" << endl;
+        cout << "Deleted an object by index 2" << endl;
         cout << list << endl;
 
-        cout << "used operator[] with index 2" << endl;
-        cout << list[2] << endl << endl;
+        cout << "Used operator[] with index 3" << endl;
+        cout << list[3] << endl << endl;
 
-        cout << "used operator[] with index 100" << endl;
-        cout << list[100] << endl;
+        cout << "Used operator[] with index 98" << endl;
+        cout << list[98] << endl;
     }
-    catch (const out_of_range& e) {
+    catch (const out_of_range& e)
+    {
         cerr << e.what() << endl;
     }
 }
 
 
-int main() {
+int main()
+{
     exampleSingleList();
     exampleDoubleList();
 }

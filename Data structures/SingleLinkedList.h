@@ -21,6 +21,15 @@ private:
     }
 
 public:
+    // Метод для додавання елемента в початок списку.
+    void AddToBeginning(T data)
+    {
+        unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(data);   // Створення нового вузла
+        newNode->next = move(head);     // Перенесення поточного головного вузла на місце наступного для нового вузла
+        head = move(newNode);   // Робимо новий вузол головним
+        size++;
+    }
+
     // Метод для додавання елемента в кінець списку.
     void AddToBack(T data)
     {
@@ -44,50 +53,37 @@ public:
         size++;
     }
 
-    // Метод для додавання елемента в початок списку.
-    void AddToBeginning(T data)
+    // Метод для видалення елемента за вказаним індексом.
+    void DeleteAtIndex(int index)
     {
-        unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(data);   // Створення нового вузла
-        newNode->next = move(head);     // Перенесення поточного головного вузла на місце наступного для нового вузла
-        head = move(newNode);   // Робимо новий вузол головним
-        size++;
-    }
+        CheckIndex(index);      // Перевірка валідності індексу.
 
-    // Метод для додавання елемента за вказаним індексом.
-    void AddAtIndex(int index, int data)
-    {
-        CheckIndex(index);
-
-        // Якщо індекс дорівнює 0, додаємо елемент в початок.
+        // Якщо індекс дорівнює 0, видаляємо перший елемент.
         if (index == 0)
         {
-            AddToBeginning(data);
-            return;
+            DeleteFromBeginning();
 
         }
 
-        // Якщо індекс дорівнює розміру списку, додаємо елемент в кінець.
-        else if (index == size)
+        // Якщо індекс дорівнює розміру списку - 1, видаляємо останній елемент.
+        else if (index == size - 1)
         {
-            AddToBack(data);
-            return;
+            DeleteFromEnd();
         }
 
-        // Додавання елемента в середину списку.
+        // Видалення елемента з середини списку.
         else
         {
-            unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(data);
             SingleNode<T>* current = head.get();
 
-            // Пошук місця для вставки елемента.
+            // Пошук елемента, який потрібно видалити.
             for (int i = 0; i < index - 1; i++)
             {
                 current = current->next.get();
             }
-            // Вставка нового елемента.
-            newNode->next = move(current->next);
-            current->next = move(newNode);
-            size++;
+            // Видалення елемента.
+            current->next = move(current->next->next);
+            --size;
         }
     }
 
@@ -128,40 +124,6 @@ public:
         --size;
     }
 
-    // Метод для видалення елемента за вказаним індексом.
-    void DeleteAtIndex(int index)
-    {
-        CheckIndex(index);      // Перевірка валідності індексу.
-
-        // Якщо індекс дорівнює 0, видаляємо перший елемент.
-        if (index == 0)
-        {
-            DeleteFromBeginning();
-
-        }
-
-        // Якщо індекс дорівнює розміру списку - 1, видаляємо останній елемент.
-        else if (index == size - 1)
-        {
-            DeleteFromEnd();
-        }
-
-        // Видалення елемента з середини списку.
-        else
-        {
-            SingleNode<T>* current = head.get();
-
-            // Пошук елемента, який потрібно видалити.
-            for (int i = 0; i < index - 1; i++)
-            {
-                current = current->next.get();
-            }
-            // Видалення елемента.
-            current->next = move(current->next->next);
-            --size;
-        }
-    }
-
     // Оператор індексації для звернення до елементів списку за індексом.
     T& operator[](const int index) const
     {
@@ -186,6 +148,44 @@ public:
         return false;
     }
 
+    // Метод для додавання елемента за вказаним індексом.
+    void AddAtIndex(int index, int data)
+    {
+        CheckIndex(index);
+
+        // Якщо індекс дорівнює 0, додаємо елемент в початок.
+        if (index == 0)
+        {
+            AddToBeginning(data);
+            return;
+
+        }
+
+        // Якщо індекс дорівнює розміру списку, додаємо елемент в кінець.
+        else if (index == size)
+        {
+            AddToBack(data);
+            return;
+        }
+
+        // Додавання елемента в середину списку.
+        else
+        {
+            unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(data);
+            SingleNode<T>* current = head.get();
+
+            // Пошук місця для вставки елемента.
+            for (int i = 0; i < index - 1; i++)
+            {
+                current = current->next.get();
+            }
+            // Вставка нового елемента.
+            newNode->next = move(current->next);
+            current->next = move(newNode);
+            size++;
+        }
+    }
+
     // Метод для отримання розміру списку.
     int getSize() const
     {
@@ -193,7 +193,7 @@ public:
     }
 
     // Дружня функція для перевантаження оператора виводу для зручного виводу списку.
-    friend ostream& operator<<(ostream& os, SinglyLinkedList& obj)
+    friend ostream& operator<<(ostream& os, SingleLinkedList& obj)
     {
         SingleNode<T>* current = obj.head.get();
         os << "List data: " << endl;
