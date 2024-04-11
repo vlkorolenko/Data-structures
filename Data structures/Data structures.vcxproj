@@ -131,6 +131,10 @@
     <ClCompile Include="SingleLinkedList.h" />
     <ClCompile Include="SingleNode.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DoubleLinkedList.h" />
+    <ClInclude Include="DoubleNode.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

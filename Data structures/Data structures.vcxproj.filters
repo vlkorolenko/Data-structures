@@ -31,4 +31,12 @@
       <Filter>Source Files\Node</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DoubleLinkedList.h">
+      <Filter>Source Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleNode.h">
+      <Filter>Source Files\Node</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

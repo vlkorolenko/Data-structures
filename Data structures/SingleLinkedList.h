@@ -5,7 +5,7 @@ using namespace std;
 using namespace singlenode;
 template<typename T>
 
-class SinglyLinkedList
+class SingleLinkedList
 {
 private:
     unique_ptr<SingleNode<T>> head;     // Унікальний вказівник на початок списку.
@@ -221,8 +221,8 @@ public:
     //    return false;
     //}
 
-    SinglyLinkedList() : head{ nullptr }, size{ 0 } {};
-    SinglyLinkedList(int value) : head{ make_unique<SingleNode<T>>(value) }, size{ 1 } {};      // Конструктор, який ініціалізує список одним елементом.
+    SingleLinkedList() : head{ nullptr }, size{ 0 } {};
+    SingleLinkedList(int value) : head{ make_unique<SingleNode<T>>(value) }, size{ 1 } {};      // Конструктор, який ініціалізує список одним елементом.
 
-    ~SinglyLinkedList() {};
+    ~SingleLinkedList() {};
 };
