@@ -176,21 +176,21 @@ public:
         return current->data;       // Повертаємо дані потрібного елемента.
     }
 
-    //// Метод для перевірки, чи є список порожнім.
-    //bool IsEmpty()
-    //{
-    //    if (size == 0)
-    //    {
-    //        return true;
-    //    }
-    //    return false;
-    //}
+    // Метод для перевірки, чи є список порожнім.
+    bool IsEmpty()
+    {
+        if (size == 0)
+        {
+            return true;
+        }
+        return false;
+    }
 
-    //// Метод для отримання розміру списку.
-    //int getSize() const
-    //{
-    //    return size;
-    //}
+    // Метод для отримання розміру списку.
+    int getSize() const
+    {
+        return size;
+    }
 
     //// Дружня функція для перевантаження оператора виводу для зручного виводу списку.
     //friend ostream& operator<<(ostream& os, SinglyLinkedList& obj)

@@ -158,20 +158,20 @@ public:
     }
 
 
-    //bool IsEmpty()
-    //{
-    //    if (size == 0)
-    //    {
-    //        return true;
-    //    }
-    //    return false;
-    //}
+    bool IsEmpty()
+    {
+        if (size == 0)
+        {
+            return true;
+        }
+        return false;
+    }
 
 
-    //int getSize() const
-    //{
-    //    return size;
-    //}
+    int getSize() const
+    {
+        return size;
+    }
 
 
     int operator[](int index) const
