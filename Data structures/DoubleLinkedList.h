@@ -187,19 +187,19 @@ public:
     }
 
 
-    //bool Search(T value) const
-    //{
-    //    shared_ptr<DoubleNode<T>> current = head;
-    //    while (current)
-    //    {
-    //        if (current->data == value)
-    //        {
-    //            return true;
-    //        }
-    //        current = current->next;
-    //    }
-    //    return false;
-    //}
+    bool Search(T value) const
+    {
+        shared_ptr<DoubleNode<T>> current = head;
+        while (current)
+        {
+            if (current->data == value)
+            {
+                return true;
+            }
+            current = current->next;
+        }
+        return false;
+    }
 
 
     //friend ostream& operator<<(ostream& os, DoubleLinkedList& obj)

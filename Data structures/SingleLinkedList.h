@@ -206,20 +206,20 @@ public:
     //    return os;
     //}
 
-    //// Метод для пошуку елемента у списку.
-    //bool Search(T data) const
-    //{
-    //    SingleNode<T>* current = head.get();
-    //    while (current)
-    //    {
-    //        if (current->data == data)
-    //        {
-    //            return true;
-    //        }
-    //        current = current->next.get();
-    //    }
-    //    return false;
-    //}
+    // Метод для пошуку елемента у списку.
+    bool Search(T data) const
+    {
+        SingleNode<T>* current = head.get();
+        while (current)
+        {
+            if (current->data == data)
+            {
+                return true;
+            }
+            current = current->next.get();
+        }
+        return false;
+    }
 
     SingleLinkedList() : head{ nullptr }, size{ 0 } {};
     SingleLinkedList(int value) : head{ make_unique<SingleNode<T>>(value) }, size{ 1 } {};      // Конструктор, який ініціалізує список одним елементом.
