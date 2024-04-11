@@ -16,6 +16,9 @@
     <Filter Include="Source Files\List">
       <UniqueIdentifier>{f7b09513-bff0-4723-a137-6c8b202493fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Node">
+      <UniqueIdentifier>{b1a5e14a-1912-4e11-b2d9-85dae7e67f50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Data structures.cpp">
@@ -23,6 +26,9 @@
     </ClCompile>
     <ClCompile Include="SingleLinkedList.h">
       <Filter>Source Files\List</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleNode.h">
+      <Filter>Source Files\Node</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Data structures.cpp" />
     <ClCompile Include="SingleLinkedList.h" />
+    <ClCompile Include="SingleNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
