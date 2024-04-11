@@ -202,18 +202,18 @@ public:
     }
 
 
-    //friend ostream& operator<<(ostream& os, DoubleLinkedList& obj)
-    //{
-    //    os << "List data: " << endl;
-    //    shared_ptr<DoubleNode<T>> current = obj.head;
-    //    while (current)
-    //    {
-    //        os << current->data << " ";
-    //        current = current->next;
-    //    }
-    //    os << endl;
-    //    return os;
-    //}
+    friend ostream& operator<<(ostream& os, DoubleLinkedList& obj)
+    {
+        os << "List data: " << endl;
+        shared_ptr<DoubleNode<T>> current = obj.head;
+        while (current)
+        {
+            os << current->data << " ";
+            current = current->next;
+        }
+        os << endl;
+        return os;
+    }
 
 
     DoubleLinkedList() : head{ nullptr }, tail{ nullptr }, size{ 0 } {};

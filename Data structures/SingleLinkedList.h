@@ -192,19 +192,19 @@ public:
         return size;
     }
 
-    //// Дружня функція для перевантаження оператора виводу для зручного виводу списку.
-    //friend ostream& operator<<(ostream& os, SinglyLinkedList& obj)
-    //{
-    //    SingleNode<T>* current = obj.head.get();
-    //    os << "List data: " << endl;
-    //    while (current != nullptr)
-    //    {
-    //        os << current->data << " ";
-    //        current = current->next.get();
-    //    }
-    //    os << endl;
-    //    return os;
-    //}
+    // Дружня функція для перевантаження оператора виводу для зручного виводу списку.
+    friend ostream& operator<<(ostream& os, SinglyLinkedList& obj)
+    {
+        SingleNode<T>* current = obj.head.get();
+        os << "List data: " << endl;
+        while (current != nullptr)
+        {
+            os << current->data << " ";
+            current = current->next.get();
+        }
+        os << endl;
+        return os;
+    }
 
     // Метод для пошуку елемента у списку.
     bool Search(T data) const
