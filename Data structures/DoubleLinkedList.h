@@ -55,32 +55,32 @@ public:
     }
 
 
-    //void AddAtIndex(int index, T data)
-    //{
-    //    CheckIndex(index);
+    void AddAtIndex(int index, T data)
+    {
+        CheckIndex(index);
 
-    //    if (index == 0)
-    //    {
-    //        AddToBeginning(data);
-    //    }
+        if (index == 0)
+        {
+            AddToBeginning(data);
+        }
 
-    //    if (index == size)
-    //    {
-    //        AddToBack(data);
-    //    }
+        if (index == size)
+        {
+            AddToBack(data);
+        }
 
-    //    shared_ptr<DoubleNode<T>> newNode = make_shared<DoubleNode<T>>(data);
-    //    shared_ptr<DoubleNode<T>> current = head;
-    //    for (int i = 0; i < index - 1; i++)
-    //    {
-    //        current = current->next;
-    //    }
-    //    newNode->next = current->next;
-    //    newNode->previous = current;
-    //    current->next->previous = newNode;
-    //    current->next = newNode;
-    //    size++;
-    //}
+        shared_ptr<DoubleNode<T>> newNode = make_shared<DoubleNode<T>>(data);
+        shared_ptr<DoubleNode<T>> current = head;
+        for (int i = 0; i < index - 1; i++)
+        {
+            current = current->next;
+        }
+        newNode->next = current->next;
+        newNode->previous = current;
+        current->next->previous = newNode;
+        current->next = newNode;
+        size++;
+    }
 
 
     void DeleteFromBeginning()
@@ -123,39 +123,39 @@ public:
     }
 
 
-    //void DeleteAtIndex(int index)
-    //{
-    //    CheckIndex(index);
+    void DeleteAtIndex(int index)
+    {
+        CheckIndex(index);
 
-    //    if (index == 0)
-    //    {
-    //        head = head->next;
-    //        if (head)
-    //        {
-    //            head->previous.reset();
-    //        }
-    //        else
-    //        {
-    //            tail.reset();
-    //        }
-    //    }
-    //    else if (index == size - 1)
-    //    {
-    //        tail = tail->previous.lock();
-    //        tail->next.reset();
-    //    }
-    //    else
-    //    {
-    //        shared_ptr<DoubleNode<T>> current = head;
-    //        for (int i = 0; i < index; i++)
-    //        {
-    //            current = current->next;
-    //        }
-    //        current->previous.lock()->next = current->next;
-    //        current->next->previous = current->previous;
-    //    }
-    //    size--;
-    //}
+        if (index == 0)
+        {
+            head = head->next;
+            if (head)
+            {
+                head->previous.reset();
+            }
+            else
+            {
+                tail.reset();
+            }
+        }
+        else if (index == size - 1)
+        {
+            tail = tail->previous.lock();
+            tail->next.reset();
+        }
+        else
+        {
+            shared_ptr<DoubleNode<T>> current = head;
+            for (int i = 0; i < index; i++)
+            {
+                current = current->next;
+            }
+            current->previous.lock()->next = current->next;
+            current->next->previous = current->previous;
+        }
+        size--;
+    }
 
 
     //bool IsEmpty()
@@ -174,17 +174,17 @@ public:
     //}
 
 
-    //int operator[](int index) const
-    //{
-    //    CheckIndex(index);
+    int operator[](int index) const
+    {
+        CheckIndex(index);
 
-    //    shared_ptr<DoubleNode<T>> current = head;
-    //    for (int i = 0; i < index - 1; i++)
-    //    {
-    //        current = current->next;
-    //    }
-    //    return current->data;
-    //}
+        shared_ptr<DoubleNode<T>> current = head;
+        for (int i = 0; i < index - 1; i++)
+        {
+            current = current->next;
+        }
+        return current->data;
+    }
 
 
     //bool Search(T value) const

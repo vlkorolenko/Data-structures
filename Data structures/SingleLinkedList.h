@@ -53,43 +53,43 @@ public:
         size++;
     }
 
-    //// Метод для додавання елемента за вказаним індексом.
-    //void AddAtIndex(int index, int data)
-    //{
-    //    CheckIndex(index);
+    // Метод для додавання елемента за вказаним індексом.
+    void AddAtIndex(int index, int data)
+    {
+        CheckIndex(index);
 
-    //    // Якщо індекс дорівнює 0, додаємо елемент в початок.
-    //    if (index == 0)
-    //    {
-    //        AddToBeginning(data);
-    //        return;
+        // Якщо індекс дорівнює 0, додаємо елемент в початок.
+        if (index == 0)
+        {
+            AddToBeginning(data);
+            return;
 
-    //    }
+        }
 
-    //    // Якщо індекс дорівнює розміру списку, додаємо елемент в кінець.
-    //    else if (index == size)
-    //    {
-    //        AddToBack(data);
-    //        return;
-    //    }
+        // Якщо індекс дорівнює розміру списку, додаємо елемент в кінець.
+        else if (index == size)
+        {
+            AddToBack(data);
+            return;
+        }
 
-    //    // Додавання елемента в середину списку.
-    //    else
-    //    {
-    //        unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(data);
-    //        SingleNode<T>* current = head.get();
+        // Додавання елемента в середину списку.
+        else
+        {
+            unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(data);
+            SingleNode<T>* current = head.get();
 
-    //        // Пошук місця для вставки елемента.
-    //        for (int i = 0; i < index - 1; i++)
-    //        {
-    //            current = current->next.get();
-    //        }
-    //        // Вставка нового елемента.
-    //        newNode->next = move(current->next);
-    //        current->next = move(newNode);
-    //        size++;
-    //    }
-    //}
+            // Пошук місця для вставки елемента.
+            for (int i = 0; i < index - 1; i++)
+            {
+                current = current->next.get();
+            }
+            // Вставка нового елемента.
+            newNode->next = move(current->next);
+            current->next = move(newNode);
+            size++;
+        }
+    }
 
     // Метод для видалення першого елемента списку.
     void DeleteFromBeginning()
@@ -128,53 +128,53 @@ public:
         --size;
     }
 
-    //// Метод для видалення елемента за вказаним індексом.
-    //void DeleteAtIndex(int index)
-    //{
-    //    CheckIndex(index);      // Перевірка валідності індексу.
+    // Метод для видалення елемента за вказаним індексом.
+    void DeleteAtIndex(int index)
+    {
+        CheckIndex(index);      // Перевірка валідності індексу.
 
-    //    // Якщо індекс дорівнює 0, видаляємо перший елемент.
-    //    if (index == 0)
-    //    {
-    //        DeleteFromBeginning();
+        // Якщо індекс дорівнює 0, видаляємо перший елемент.
+        if (index == 0)
+        {
+            DeleteFromBeginning();
 
-    //    }
+        }
 
-    //    // Якщо індекс дорівнює розміру списку - 1, видаляємо останній елемент.
-    //    else if (index == size - 1)
-    //    {
-    //        DeleteFromEnd();
-    //    }
+        // Якщо індекс дорівнює розміру списку - 1, видаляємо останній елемент.
+        else if (index == size - 1)
+        {
+            DeleteFromEnd();
+        }
 
-    //    // Видалення елемента з середини списку.
-    //    else
-    //    {
-    //        SingleNode<T>* current = head.get();
+        // Видалення елемента з середини списку.
+        else
+        {
+            SingleNode<T>* current = head.get();
 
-    //        // Пошук елемента, який потрібно видалити.
-    //        for (int i = 0; i < index - 1; i++)
-    //        {
-    //            current = current->next.get();
-    //        }
-    //        // Видалення елемента.
-    //        current->next = move(current->next->next);
-    //        --size;
-    //    }
-    //}
+            // Пошук елемента, який потрібно видалити.
+            for (int i = 0; i < index - 1; i++)
+            {
+                current = current->next.get();
+            }
+            // Видалення елемента.
+            current->next = move(current->next->next);
+            --size;
+        }
+    }
 
-    //// Оператор індексації для звернення до елементів списку за індексом.
-    //T& operator[](const int index) const
-    //{
-    //    CheckIndex(index);
-    //    SingleNode<T>* current = head.get();
+    // Оператор індексації для звернення до елементів списку за індексом.
+    T& operator[](const int index) const
+    {
+        CheckIndex(index);
+        SingleNode<T>* current = head.get();
 
-    //    // Переміщення вказівника на потрібний елемент за допомогою індексу.
-    //    for (int i = 0; i < index; i++)
-    //    {
-    //        current = current->next.get();
-    //    }
-    //    return current->data;       // Повертаємо дані потрібного елемента.
-    //}
+        // Переміщення вказівника на потрібний елемент за допомогою індексу.
+        for (int i = 0; i < index; i++)
+        {
+            current = current->next.get();
+        }
+        return current->data;       // Повертаємо дані потрібного елемента.
+    }
 
     //// Метод для перевірки, чи є список порожнім.
     //bool IsEmpty()
