@@ -21,37 +21,37 @@ private:
     }
 
 public:
-    //// Метод для додавання елемента в кінець списку.
-    //void AddToBack(T data)
-    //{
-    //    unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(data);
-    //    SingleNode<T>* current = head.get();    // Отримання вказівника на поточний вузол.
+    // Метод для додавання елемента в кінець списку.
+    void AddToBack(T data)
+    {
+        unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(data);
+        SingleNode<T>* current = head.get();    // Отримання вказівника на поточний вузол.
 
-    //    // Якщо список порожній, то новий елемент стає головним.
-    //    if (!current)
-    //    {
-    //        head = move(newNode);
-    //        size++;
-    //        return;
-    //    }
+        // Якщо список порожній, то новий елемент стає головним.
+        if (!current)
+        {
+            head = move(newNode);
+            size++;
+            return;
+        }
 
-    //    // Якщо список не порожній, то додаємо елемент в кінець.
-    //    while (current->next)
-    //    {
-    //        current = current->next.get();
-    //    }
-    //    current->next = move(newNode);
-    //    size++;
-    //}
+        // Якщо список не порожній, то додаємо елемент в кінець.
+        while (current->next)
+        {
+            current = current->next.get();
+        }
+        current->next = move(newNode);
+        size++;
+    }
 
-    //// Метод для додавання елемента в початок списку.
-    //void AddToBeginning(T data)
-    //{
-    //    unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(data);   // Створення нового вузла
-    //    newNode->next = move(head);     // Перенесення поточного головного вузла на місце наступного для нового вузла
-    //    head = move(newNode);   // Робимо новий вузол головним
-    //    size++;
-    //}
+    // Метод для додавання елемента в початок списку.
+    void AddToBeginning(T data)
+    {
+        unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(data);   // Створення нового вузла
+        newNode->next = move(head);     // Перенесення поточного головного вузла на місце наступного для нового вузла
+        head = move(newNode);   // Робимо новий вузол головним
+        size++;
+    }
 
     //// Метод для додавання елемента за вказаним індексом.
     //void AddAtIndex(int index, int data)

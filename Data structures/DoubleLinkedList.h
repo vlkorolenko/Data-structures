@@ -20,39 +20,39 @@ private:
     }
 public:
 
+    // Метод для додавання елемента в початок списку.
+    void AddToBeginning(T data)
+    {
+        shared_ptr<DoubleNode<T>> newNode = make_shared<DoubleNode<T>>(data);
+        if (!head)
+        {
+            head = tail = newNode;
+        }
+        else
+        {
+            newNode->next = head;
+            head->previous = newNode;
+            head = newNode;
+        }
+        size++;
+    }
 
-    //void AddToBeginning(T data)
-    //{
-    //    shared_ptr<DoubleNode<T>> newNode = make_shared<DoubleNode<T>>(data);
-    //    if (!head)
-    //    {
-    //        head = tail = newNode;
-    //    }
-    //    else
-    //    {
-    //        newNode->next = head;
-    //        head->previous = newNode;
-    //        head = newNode;
-    //    }
-    //    size++;
-    //}
-
-
-    //void AddToBack(T data)
-    //{
-    //    shared_ptr<DoubleNode<T>> newNode = make_shared<DoubleNode<T>>(data);
-    //    if (!tail)
-    //    {
-    //        head = tail = newNode;
-    //    }
-    //    else
-    //    {
-    //        tail->next = newNode;
-    //        newNode->previous = tail;
-    //        tail = newNode;
-    //    }
-    //    size++;
-    //}
+    // Метод для додавання елемента в кінець списку.
+    void AddToBack(T data)
+    {
+        shared_ptr<DoubleNode<T>> newNode = make_shared<DoubleNode<T>>(data);
+        if (!tail)
+        {
+            head = tail = newNode;
+        }
+        else
+        {
+            tail->next = newNode;
+            newNode->previous = tail;
+            tail = newNode;
+        }
+        size++;
+    }
 
 
     //void AddAtIndex(int index, T data)
