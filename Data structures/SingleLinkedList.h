@@ -91,42 +91,42 @@ public:
     //    }
     //}
 
-    //// Метод для видалення першого елемента списку.
-    //void DeleteFromBeginning()
-    //{
-    //    if (!head)
-    //    {
-    //        throw out_of_range("List is empty!");
-    //    }
-    //    head = move(head->next);    // Переміщення наступного вузла на місце головного.
-    //    --size;
-    //}
+    // Метод для видалення першого елемента списку.
+    void DeleteFromBeginning()
+    {
+        if (!head)
+        {
+            throw out_of_range("List is empty!");
+        }
+        head = move(head->next);    // Переміщення наступного вузла на місце головного.
+        --size;
+    }
 
-    //// Метод для видалення останнього елемента списку.
-    //void DeleteFromEnd()
-    //{
-    //    if (!head)
-    //    {
-    //        throw out_of_range("List is empty!");
-    //    }
+    // Метод для видалення останнього елемента списку.
+    void DeleteFromEnd()
+    {
+        if (!head)
+        {
+            throw out_of_range("List is empty!");
+        }
 
-    //    // Якщо список містить лише один елемент, просто очищаємо head.
-    //    if (size == 1)
-    //    {
-    //        head.reset();
-    //        --size;
-    //        return;
-    //    }
-    //    SingleNode<T>* current = head.get();    // Отримання вказівника на початок списку.
+        // Якщо список містить лише один елемент, просто очищаємо head.
+        if (size == 1)
+        {
+            head.reset();
+            --size;
+            return;
+        }
+        SingleNode<T>* current = head.get();    // Отримання вказівника на початок списку.
 
-    //    // Переміщення вказівника на передостанній елемент.
-    //    while (current->next->next)
-    //    {
-    //        current = current->next.get();
-    //    }
-    //    current->next.reset();                  // Очищення вказівника на наступний елемент.
-    //    --size;
-    //}
+        // Переміщення вказівника на передостанній елемент.
+        while (current->next->next)
+        {
+            current = current->next.get();
+        }
+        current->next.reset();                  // Очищення вказівника на наступний елемент.
+        --size;
+    }
 
     //// Метод для видалення елемента за вказаним індексом.
     //void DeleteAtIndex(int index)

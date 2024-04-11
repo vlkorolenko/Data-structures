@@ -83,44 +83,44 @@ public:
     //}
 
 
-    //void DeleteFromBeginning()
-    //{
-    //    if (!head)
-    //    {
-    //        return;
-    //    }
+    void DeleteFromBeginning()
+    {
+        if (!head)
+        {
+            return;
+        }
 
-    //    if (head == tail)
-    //    {
-    //        head = tail = nullptr;
-    //    }
-    //    else
-    //    {
-    //        head = head->next;
-    //        head->previous.reset();
-    //    }
-    //    size--;
-    //}
+        if (head == tail)
+        {
+            head = tail = nullptr;
+        }
+        else
+        {
+            head = head->next;
+            head->previous.reset();
+        }
+        size--;
+    }
 
 
-    //void DeleteFromEnd()
-    //{
-    //    if (!tail)
-    //    {
-    //        return;
-    //    }
+    void DeleteFromEnd()
+    {
+        if (!tail)
+        {
+            return;
+        }
 
-    //    if (head == tail)
-    //    {
-    //        head = tail = nullptr;
-    //    }
-    //    else
-    //    {
-    //        tail = tail->previous.lock();
-    //        tail->next = nullptr;
-    //    }
-    //    size--;
-    //}
+        if (head == tail)
+        {
+            head = tail = nullptr;
+        }
+        else
+        {
+            tail = tail->previous.lock();
+            tail->next = nullptr;
+        }
+        size--;
+    }
 
 
     //void DeleteAtIndex(int index)
