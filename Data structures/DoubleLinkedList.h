@@ -1,3 +1,4 @@
+#pragma once
 #include "DoubleNode.h"
 #include <iostream>
 
@@ -219,5 +220,4 @@ public:
     DoubleLinkedList() : head{ nullptr }, tail{ nullptr }, size{ 0 } {};
     DoubleLinkedList(T data) : head{ make_shared<DoubleNode<T>>(data) }, tail{ head }, size{ 1 } {};
     ~DoubleLinkedList() {};
-
 };

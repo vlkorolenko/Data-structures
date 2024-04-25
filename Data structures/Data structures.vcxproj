@@ -128,12 +128,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Data structures.cpp" />
+    <ClCompile Include="InputRestrictedQueueArray.h" />
+    <ClCompile Include="QueueNode.h" />
+    <ClCompile Include="QueueOfArrays.h" />
     <ClCompile Include="SingleLinkedList.h" />
     <ClCompile Include="SingleNode.h" />
+    <ClCompile Include="StackNode.h" />
+    <ClCompile Include="StackOfArray.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DoubleLinkedList.h" />
     <ClInclude Include="DoubleNode.h" />
+    <ClInclude Include="InputRestrictedQueue.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

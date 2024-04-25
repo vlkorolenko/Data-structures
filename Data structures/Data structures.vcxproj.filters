@@ -30,6 +30,21 @@
     <ClCompile Include="SingleNode.h">
       <Filter>Source Files\Node</Filter>
     </ClCompile>
+    <ClCompile Include="QueueNode.h">
+      <Filter>Source Files\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="StackNode.h">
+      <Filter>Source Files\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="StackOfArray.h">
+      <Filter>Source Files\List</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueOfArrays.h">
+      <Filter>Source Files\List</Filter>
+    </ClCompile>
+    <ClCompile Include="InputRestrictedQueueArray.h">
+      <Filter>Source Files\List</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DoubleLinkedList.h">
@@ -37,6 +52,15 @@
     </ClInclude>
     <ClInclude Include="DoubleNode.h">
       <Filter>Source Files\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Source Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>Source Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="InputRestrictedQueue.h">
+      <Filter>Source Files\List</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

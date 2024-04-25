@@ -1,3 +1,4 @@
+#pragma once
 #include "SingleNode.h"
 #include <iostream>
 
